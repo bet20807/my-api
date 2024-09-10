@@ -18,7 +18,7 @@ app.use(express.json());
 // Users CRUD
 // ------------------------------------------------------------
 // Get all users
-app.get('/users', (req, res) => {
+app.get('/', (req, res) => {
   db.all('SELECT * FROM users', [], (err, rows) => {
     handleResponse(res, err, rows);
   });
