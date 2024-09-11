@@ -1,5 +1,6 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
+const path = require('path');  // เพิ่มบรรทัดนี้
 const app = express();
 const port = 3000;
 
