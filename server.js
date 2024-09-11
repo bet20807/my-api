@@ -4,9 +4,11 @@ const app = express();
 const port = 3000;
 
 // เชื่อมต่อฐานข้อมูล
-const db = new sqlite3.Database('./lotto.db', (err) => {
+const dbPath = path.resolve(__dirname, 'lotto.db');
+const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
-    console.error(err.message);
+    console.error('Error opening database:', err.message);
+    console.error('Database path:', dbPath);
   } else {
     console.log('Connected to the lotto database.');
   }
